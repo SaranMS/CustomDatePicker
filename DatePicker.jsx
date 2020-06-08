@@ -52,7 +52,7 @@ render(){
     return(
         <>
         
-                            <div id="sectionDetailsDate" className="container">
+            {/* <div id="sectionDetailsDate" className="container">
                         <table>
                             <tr>
 
@@ -109,7 +109,30 @@ render(){
                             </tr>
                         </table>
 
-                    </div>
+                    </div> */}
+            
+            <div id="sectionDetailsDate" className="container">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        {
+                                            this.dateFunc().map(
+                                                (day, i) =>
+                                                    <td key={day + i}>
+                                                        <input type="radio" id={day + i}
+                                                            name="date"
+                                                            onChange={this.handleChange}
+                                                            value={day} />
+                                                        <label htmlFor={day + i}>
+                                                            <h4>{day}</h4>
+                                                        </label>
+                                                    </td>
+                                            )
+                                        }
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
         
         </>
     )
